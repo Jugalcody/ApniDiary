@@ -4,29 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="#E4E2E2"
+    android:id="@+id/drawerLayout"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="290dp"
-        android:background="#323131"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/header_navigation"
-        app:menu="@menu/side_navigation"
-        />
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:elevation="4dp"
+            app:menu="@menu/side_navigation"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+
+            app:titleTextAppearance="@style/ActionBarTitle"
+            app:subtitleTextAppearance="@style/ActionBarSubTitle"
+            android:background="@color/header_nav"
+            />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/my_toolbar"
+            android:id="@+id/fragment_container"
+            android:layout_above="@id/coordinatorLayout"
+            />
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/coordinatorLayout"
 
         >
-<com.google.android.material.bottomappbar.BottomAppBar
+            <com.google.android.material.bottomappbar.BottomAppBar
     android:layout_width="match_parent"
     android:layout_gravity="bottom"
     android:layout_height="wrap_content"
+                app:hideOnScroll="true"
     app:fabCradleMargin="7dp"
     app:fabCradleRoundedCornerRadius="50dp"
     app:fabAlignmentMode="center"
@@ -37,10 +57,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:menu="@menu/bottom_navigation"
+        android:id="@+id/bottom_navigation_view"
         android:backgroundTint="@color/gray"
         />
 
 </com.google.android.material.bottomappbar.BottomAppBar>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
     </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="match_parent"
+        android:background="#323131"
+        android:layout_height="match_parent"
+
+        android:id="@+id/navigationView"
+        app:menu="@menu/side_navigation"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header_navigation"
+        />
 </androidx.drawerlayout.widget.DrawerLayout>

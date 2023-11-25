@@ -5,4 +5,5 @@
     <color name="red">#C12525</color>
     <color name="gray">#333333</color>
     <color name="header_nav">#C1BDBD</color>
+    <color name="transparentColor">#00000000</color>
 </resources>

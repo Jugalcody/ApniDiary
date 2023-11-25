@@ -6,4 +6,9 @@
     </style>
 
     <style name="Theme.ApniDiary" parent="Base.Theme.ApniDiary" />
+
+    <style name="Theme.Loginpage" parent="Base.Theme.ApniDiary" >
+        <item name="colorPrimary">#e4e2e2</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
 </resources>
